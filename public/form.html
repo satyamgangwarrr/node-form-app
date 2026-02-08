@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UISOCIAL | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      background: #f4f6f8;
+    }
+
+    .left {
+      width: 50%;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .left h1 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .left p {
+      opacity: 0.8;
+      max-width: 400px;
+    }
+
+    .right {
+      width: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: 360px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: #ff5a5f;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e0484d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="left">
+    <div>
+      <h1>Hi 👋</h1>
+      <p>
+        Welcome to UISOCIAL.  
+        Share your details and get in touch with us.
+      </p>
+    </div>
+  </div>
+
+  <div class="right">
+    <form class="card" method="POST" action="/submit">
+      <h2>Contact Us</h2>
+
+      <input name="name" placeholder="Your name" required />
+      <input name="email" type="email" placeholder="Email address" required />
+      <textarea name="message" placeholder="Your message"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
+
