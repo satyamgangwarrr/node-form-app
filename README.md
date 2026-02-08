@@ -16,15 +16,6 @@ A simple and clean Node.js contact form application running on a Google Cloud Vi
 - HTML / CSS
 - Google Compute Engine (VM)
 
-📁 Project Structure
-node-form-app/
-├── index.js
-├── package.json
-├── package-lock.json
-├── public/
-│   └── form.html
-├── .gitignore
-└── README.md
 
 ⚙️ How to Run Locally
 Install dependencies:
