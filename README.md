@@ -1,59 +1,84 @@
-# 🚀 Node Form App – Google Cloud VM Deployment
-A simple and clean Node.js contact form application running on a Google Cloud Virtual Machine. The application stores form submissions in Google Cloud Storage (CSV format) and prevents duplicate submissions using backend validation.
+# Node Form App (Google Cloud VM)
 
-✨ Features
-- Contact form with Name, Email & Message
-- Stores responses in Google Cloud Storage
-- Prevents duplicate submissions (same email)
-- Handles concurrent requests safely
-- Deployed on Google Cloud VM
-- Uses VM default service account (no secrets in code)
+A simple and reliable Node.js contact form application deployed on a Google Cloud Virtual Machine.  
+This project demonstrates how a basic web application can be integrated with Google Cloud Storage while following cloud-native security and backend validation practices.
 
-🛠️ Tech Stack
-- Node.js
-- Express.js
-- Google Cloud Storage
-- HTML / CSS
+The application allows users to submit their name, email address, and message through a web form. Each submission is stored in Google Cloud Storage in CSV format along with a timestamp. To maintain clean data, the backend prevents duplicate submissions from the same email address.
+
+The project is intentionally kept minimal to focus on understanding backend workflows, cloud deployment, IAM-based authentication, and safe handling of concurrent requests.
+
+## Features
+
+- Contact form with name, email, and message
+- Backend validation to block duplicate submissions
+- Data stored in Google Cloud Storage as CSV
+- Uses VM default service account (no hardcoded credentials)
+- Deployed on Google Cloud Compute Engine
+- Simple and easy to understand codebase
+
+## Technology Stack
+
+- Node.js  
+- Express.js  
+- HTML & CSS  
+- Google Cloud Storage  
 - Google Compute Engine (VM)
 
+## Project Structure
 
-⚙️ How to Run Locally
+node-form-app/  
+├── index.js  
+├── package.json  
+├── package-lock.json  
+├── public/  
+│   └── form.html  
+├── .gitignore  
+└── README.md  
+
+## Running the Application
+
 Install dependencies:
-npm install
+
+npm install  
 
 Start the server:
-node index.js
 
-Application will run on:
-http://localhost:3000
+node index.js  
 
-🌐 Access on Google Cloud VM
-After deploying to a Google Cloud VM and opening the firewall port:
-http://<VM_EXTERNAL_IP>:3000
+The application will be available at:
 
-🗂️ Data Storage
-Form submissions are stored as a CSV file in Google Cloud Storage:
-gs://cloud-assigment-01/responses/form_responses.csv
+http://localhost:3000  
 
-Each submission contains:
-Name, Email, Message, Timestamp
-Duplicate submissions using the same email are blocked.
+## Access on Google Cloud VM
 
-📄 Sample CSV Data
-name,email,message,timestamp
-Satyam,satyam@email.com,Hello!,2026-02-08T10:25:30Z
+After deploying the app on a Google Cloud VM and allowing the required firewall port, the application can be accessed publicly using:
 
-🔒 Security Notes
-No credentials committed to repository. Uses Google Cloud VM IAM role. Sensitive files excluded using .gitignore.
+http://<VM_EXTERNAL_IP>:3000  
 
-⚠️ Limitations
-CSV storage is suitable for learning and small-scale usage. For large-scale or production systems, consider Firestore or Cloud SQL.
+This URL can be shared with others.
 
-🚀 Future Improvements
-Deploy on Cloud Run, replace CSV with Firestore, add email verification, add admin dashboard, enable HTTPS with domain.
+## Data Storage
 
-👨‍💻 Author
-Satyam Gangwar
-Built as part of Google Cloud & backend learning.
+All form submissions are stored in a CSV file inside a Google Cloud Storage bucket:
 
-⭐ Star this repository if you find it helpful!
+gs://cloud-assigment-01/responses/form_responses.csv  
+
+Each record contains the user’s name, email, message, and submission timestamp.  
+If an email address is already present, further submissions using the same email are rejected.
+
+## Security
+
+The application does not store any credentials or API keys in the repository.  
+Access to Google Cloud Storage is handled using the VM’s default IAM service account.  
+Sensitive files such as node_modules are excluded using .gitignore.
+
+## Notes
+
+This project uses CSV storage for simplicity and learning purposes.  
+For production-ready systems, database solutions like Firestore or Cloud SQL are recommended.
+
+## Author
+
+Satyam Gangwar  
+
+This project was built to learn and demonstrate backend development and cloud deployment concepts.
