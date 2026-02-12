@@ -53,7 +53,8 @@ http://localhost:3000
 
 After deploying the app on a Google Cloud VM and allowing the required firewall port, the application can be accessed publicly using:
 
-http://<VM_EXTERNAL_IP>:3000  
+http://<VM_EXTERNAL_IP>:3000 
+My url : http://34.19.56.228:3000/
 
 This URL can be shared with others.
 
