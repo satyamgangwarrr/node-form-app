@@ -51,7 +51,6 @@ app.post("/submit", async (req, res) => {
     const safeMessage = message.replace(/"/g, '""');
     csvData += `"${name}","${email}","${safeMessage}","${timestamp}"\n`;
 
-    // 🔒 GENERATION LOCK (THIS IS THE FIX)
     await file.save(csvData, {
       contentType: "text/csv",
       preconditionOpts: exists ? { ifGenerationMatch: generation } : {},
@@ -61,7 +60,6 @@ app.post("/submit", async (req, res) => {
 
   } catch (err) {
     if (err.code === 412) {
-      // Another request modified file first
       return res.status(409).send("Duplicate submission detected. Try again.");
     }
 
